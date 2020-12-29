@@ -6,8 +6,6 @@ export const cartReducer = (state = { cartItems: [] }, action) => {
       const item = action.payload;
       const existItem = state.cartItems.find((x) => x.product === item.product);
       if (existItem) {
-        const newQty = existItem.qty + item.qty;
-        item.qty = newQty;
         return {
           ...state,
           cartItems: state.cartItems.map((x) =>
